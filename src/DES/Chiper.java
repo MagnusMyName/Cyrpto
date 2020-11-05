@@ -5,7 +5,6 @@ package DES;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author SONY
@@ -74,6 +73,7 @@ public class Chiper {
         try {
             encryptDecrypt("12345678", Cipher.ENCRYPT_MODE, plainText, encrypted);
             System.out.println("Enkripsi selesai");
+
         } catch (InvalidKeyException | NoSuchAlgorithmException | InvalidKeySpecException | NoSuchPaddingException
                 | IOException e) {
             e.printStackTrace();

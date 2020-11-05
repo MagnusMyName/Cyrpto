@@ -12,10 +12,10 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 public class Encryptor {
-    private static String outputFilePath = "C:\\Users\\SONY\\Desktop\\Plain3des.txt";
+    private static String inputFilePath = "C:\\Users\\SONY\\Desktop\\Plain.txt";
     public static void main(String[] args) {
         FileOutputStream fos = null;
-        File file = new File(outputFilePath);
+        File file = new File(inputFilePath);
         String keyString = "012345678";
         String algorithm = "DESede";
         try {
@@ -38,6 +38,7 @@ public class Encryptor {
             e.printStackTrace();
         }
     }
+    
     public static SecretKey getKey(String message) throws Exception {
         String messageToUpperCase = message.toUpperCase();
         byte[] digestOfPassword = messageToUpperCase.getBytes();
