@@ -17,7 +17,7 @@ public class Encryptor {
         FileOutputStream fos = null;
         File file = new File(inputFilePath);
         String keyString = "012345678";
-        String algorithm = "DESede";
+        
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             byte[] fileByteArray = new byte[fileInputStream.available()];
@@ -26,7 +26,7 @@ public class Encryptor {
             System.out.println(b);
             }
             SecretKey secretKey = getKey(keyString);
-            Cipher cipher = Cipher.getInstance(algorithm);
+            Cipher cipher = Cipher.getInstance("DESede/ECB/PKCS5Padding");
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream
                     (new CipherOutputStream

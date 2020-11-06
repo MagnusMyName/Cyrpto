@@ -1,6 +1,5 @@
 package TripleDes;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -19,13 +18,12 @@ class Decryptor {
         FileOutputStream fos = null;
         File file = new File(outputFilePath);
         String keyString = "012345678";
-        String algorithm = "DESede";
         try {
             File inputFileNAme = new File("C:\\Users\\SONY\\Desktop\\enkripsie3des.txt");
             FileInputStream fileInputStream = new FileInputStream(inputFileNAme);
             FileOutputStream fileOutputStream = new FileOutputStream(outputFilePath);
             SecretKey secretKey = getKey(keyString);
-            Cipher cipher = Cipher.getInstance(algorithm);
+            Cipher cipher = Cipher.getInstance("DESede/ECB/PKCS5Padding");
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
             ObjectInputStream objectInputStream = new ObjectInputStream(new CipherInputStream(fileInputStream, cipher));
             System.out.println(objectInputStream.available());
