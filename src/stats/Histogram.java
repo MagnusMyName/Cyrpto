@@ -2,16 +2,16 @@ package stats;
 
 public class Histogram {
 	
-	// Lista para los valores del efecto avalancha
+	// List for avalanche effect values
 	private int[] histogram;
-	private int muestras;
+	private int sample;
 	private double media;
 	private double desviacion;
 
 
-	public Histogram(int n, int muestras){
+	public Histogram(int n, int samples){
 		histogram = new int[n];
-		this.muestras = muestras;
+		this.sample = samples;
 	}
 
 	public int[] getHistogram() {
@@ -19,13 +19,13 @@ public class Histogram {
 	}
 	
 
-	// A�ade valor de efecto avalancha
+	// Add avalanche effect value
 	public void addData(int data){
 		histogram[data]++;
 	}
 	
 
-	// Muestra por pantalla los valores del efecto avalancha
+	// Displays the avalanche effect values ​​on the screen
 	public void print() {
 		for (int i = 0; i < histogram.length; i++){
 			System.out.println(histogram[i]);
@@ -42,7 +42,7 @@ public class Histogram {
 			double suma = i * histogram[i];
 			res = res + suma;
 		}
-		media = res / muestras;
+		media = res / sample;
 	}
 
 	public void desviacion(){
@@ -51,7 +51,7 @@ public class Histogram {
 		for (int i = 0; i < histogram.length; i++){
 			suma = suma + (Math.pow(i - media, 2) * histogram[i]);
 		}
-		res = Math.sqrt(suma / (muestras - 1));
+		res = Math.sqrt(suma / (sample - 1));
 		desviacion = res;
 	}
 

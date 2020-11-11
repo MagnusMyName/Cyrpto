@@ -9,9 +9,9 @@ public class DESCBCMAC {
     public DESCBCMAC() {
     }
 
-    // Cifra input y devuelve el resultado como array de bytes
+    // Encrypts input and returns the result as an array of bytes
     public byte[] encode(byte[] key, byte[] input) {
-        // El bloque de salida del algoritmo siempre es de 32 bits
+        // The output block of the algorithm is always 32 bits
         byte[] output = new byte[4];
         KeyParameter keyParameter = new KeyParameter(key);
         DESEngine desEngine = new DESEngine();

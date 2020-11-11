@@ -19,12 +19,12 @@ public class Main {
 //		System.out.println("Histograma extreme:");
 //		aExtreme.printHistogram();
 
-		int muestras = 2000;
-		AvalancheToInput avalancheToInput = new AvalancheToInput(muestras);
+		int samples = 2000;
+		AvalancheToInput avalancheToInput = new AvalancheToInput(samples);
 		System.out.println("Histograma avalanche to input:");
 		avalancheToInput.printHistogram();
 
-		AvalancheToKey avalancheToKey = new AvalancheToKey(muestras);
+		AvalancheToKey avalancheToKey = new AvalancheToKey(samples);
 		System.out.println("Histogram avalanche to key:");
 		avalancheToKey.printHistogram();
 	}

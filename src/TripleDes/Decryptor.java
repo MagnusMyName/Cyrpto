@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.security.SecureRandom;
 import java.util.Arrays;
 import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
@@ -24,7 +25,7 @@ class Decryptor {
             FileOutputStream fileOutputStream = new FileOutputStream(outputFilePath);
             SecretKey secretKey = getKey(keyString);
             Cipher cipher = Cipher.getInstance("DESede/ECB/PKCS5Padding");
-            cipher.init(Cipher.DECRYPT_MODE, secretKey);
+            cipher.init(Cipher.DECRYPT_MODE, secretKey, SecureRandom.getInstance("SHA1PRNG"));
             ObjectInputStream objectInputStream = new ObjectInputStream(new CipherInputStream(fileInputStream, cipher));
             System.out.println(objectInputStream.available());
             fileOutputStream.write((byte[]) objectInputStream.readObject());
