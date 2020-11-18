@@ -70,10 +70,10 @@ public class AvalancheToInput {
     // Calculate Hamming distance for a case study
     public int getHammingDistance(byte[] a, byte[] b) {
         int res = 0;
-         System.out.println("");
-        System.out.println(a.length);
-        System.out.println(b.length);
-        System.out.println("");
+//         System.out.println("");
+////        System.out.println(a.length);
+////        System.out.println(b.length);
+//        System.out.println("");
         byte[] xnor = new byte[a.length];
         for (int i = 0; i < xnor.length; i++) {
             xnor[i] = (byte) ((a[i] & b[i]) | (~a[i] & ~b[i]));

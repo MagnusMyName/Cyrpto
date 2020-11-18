@@ -13,7 +13,7 @@ public class main {
 
     public static void main(String[] args) {
 //        Chiper desAvalanche = new Chiper();
-//        avalanche avalanche = new avalanche();
+        avalanche avalanche = new avalanche();
 
     }
 }

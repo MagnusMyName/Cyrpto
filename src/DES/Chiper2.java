@@ -67,7 +67,7 @@ public class Chiper2 {
     }
 
     public static void main(String[] args) {
-        File encrypted = new File("C:\\Users\\SONY\\Desktop\\Plain.txt");
+        File encrypted = new File("C:\\Users\\SONY\\Desktop\\Plain2.txt");
         File decrypted = new File("C:\\Users\\SONY\\Desktop\\enkrpsi.txt");
 
         try {

@@ -13,7 +13,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class Encryptor {
 
-    private static String inputFilePath = "C:\\Users\\SONY\\Desktop\\Plain.txt";
+    private static String inputFilePath = "C:\\Users\\SONY\\Desktop\\Plain2.txt";
 
     public static void main(String[] args) {
         FileOutputStream fos = null;
