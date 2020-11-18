@@ -13,7 +13,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class Encryptor {
 
-    private static String inputFilePath = "C:\\Users\\SONY\\Desktop\\Plain2.txt";
+    private static String inputFilePath = "C:\\Users\\SONY\\Desktop\\Plain3.txt";
 
     public static void main(String[] args) {
         FileOutputStream fos = null;
@@ -31,7 +31,7 @@ public class Encryptor {
             Cipher cipher = Cipher.getInstance("DESede/ECB/PKCS5Padding");
             cipher.init(Cipher.ENCRYPT_MODE, secretKey, SecureRandom.getInstance("SHA1PRNG"));
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(new CipherOutputStream(
-                    new FileOutputStream("C:\\Users\\SONY\\Desktop\\enkripsie3des.txt"), cipher));
+                    new FileOutputStream("C:\\Users\\SONY\\Desktop\\enkripsie3des3.txt"), cipher));
             objectOutputStream.writeObject(fileByteArray);
             objectOutputStream.close();
         } catch (Exception e) {

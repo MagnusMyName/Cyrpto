@@ -24,22 +24,33 @@ public class avalanche {
 
     private Histogram histogram;
     public String pathPlain = "C:\\Users\\SONY\\Desktop\\Plain.txt";
-    public String pathEncryptDES = "C:\\Users\\SONY\\Desktop\\enkrpsi.txt";
-    public String pathEncrypt3DES = "C:\\Users\\SONY\\Desktop\\enkripsie3des.txt";
     public String pathPlain2 = "C:\\Users\\SONY\\Desktop\\Plain2.txt";
-//    public String pathEncryptDESede = "C:\\Users\\SONY\\Desktop\\enkrpsidesede.txt";
+    public String pathPlain3 = "C:\\Users\\SONY\\Desktop\\Plain3.txt";
+    public String pathEncryptDES = "C:\\Users\\SONY\\Desktop\\enkrpsi.txt";
+    public String pathEncryptDES2 = "C:\\Users\\SONY\\Desktop\\enkrpsi2.txt";
+    public String pathEncryptDES3 = "C:\\Users\\SONY\\Desktop\\enkrpsi3.txt";
+    public String pathEncrypt3DES = "C:\\Users\\SONY\\Desktop\\enkripsie3des.txt";
+    public String pathEncrypt3DES2 = "C:\\Users\\SONY\\Desktop\\enkripsie3des2.txt";
+    public String pathEncrypt3DES3 = "C:\\Users\\SONY\\Desktop\\enkripsie3des3.txt";
 
     public avalanche() {
         String text = readFileAsString(pathPlain);
-        String text2 = readFileAsString(pathEncryptDES);
-        String text3 = readFileAsString(pathEncrypt3DES);
-//        String text4 = readFileAsString(pathEncryptDESede);
-        String text5 = readFileAsString(pathPlain2);
-//        System.out.println("Plain to DES Byte Change : " + getHammingDistance(text.getBytes(), text2.getBytes()));
-//        System.out.println("Plain to 3DES Byte Change : " + getHammingDistance(text.getBytes(), text3.getBytes()));
-         System.out.println("Plain to DES Byte Change : " + getHammingDistance(text5.getBytes(), text2.getBytes()));
-        System.out.println("Plain to 3DES Byte Change : " + getHammingDistance(text5.getBytes(), text3.getBytes()));
-//          System.out.println("Plain to DESede Byte Change : " + getHammingDistance(text.getBytes(), text4.getBytes()));
+        String text2 = readFileAsString(pathPlain2);
+        String text3 = readFileAsString(pathPlain3);
+        String text4 = readFileAsString(pathEncryptDES);
+        String text5 = readFileAsString(pathEncryptDES2);
+        String text6 = readFileAsString(pathEncryptDES3);
+        String text7 = readFileAsString(pathEncrypt3DES);
+        String text8 = readFileAsString(pathEncrypt3DES2);
+        String text9 = readFileAsString(pathEncrypt3DES3);
+        System.out.println("Byte Change on DES : ");
+        System.out.println("Plain Panjang to DES  : " + getHammingDistance(text.getBytes(), text4.getBytes()));
+        System.out.println("Plain Sedang to DES  : " + getHammingDistance(text2.getBytes(), text5.getBytes()));
+        System.out.println("Plain Pendek to DES  : " + getHammingDistance(text3.getBytes(), text6.getBytes()));
+        System.out.println("Byte Change on 3DES : ");
+        System.out.println("Plain Panjang to 3DES  : " + getHammingDistance(text.getBytes(), text7.getBytes()));
+        System.out.println("Plain Sedang to 3DES  : " + getHammingDistance(text2.getBytes(), text8.getBytes()));
+        System.out.println("Plain Pendek to 3DES  : " + getHammingDistance(text3.getBytes(), text9.getBytes()));
 
     }
 

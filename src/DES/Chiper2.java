@@ -67,11 +67,17 @@ public class Chiper2 {
     }
 
     public static void main(String[] args) {
-        File encrypted = new File("C:\\Users\\SONY\\Desktop\\Plain2.txt");
+        File plain = new File("C:\\Users\\SONY\\Desktop\\Plain.txt");
+        File plain2 = new File("C:\\Users\\SONY\\Desktop\\Plain2.txt");
+        File plain3 = new File("C:\\Users\\SONY\\Desktop\\Plain3.txt");
         File decrypted = new File("C:\\Users\\SONY\\Desktop\\enkrpsi.txt");
+        File decrypted2 = new File("C:\\Users\\SONY\\Desktop\\enkrpsi2.txt");
+        File decrypted3 = new File("C:\\Users\\SONY\\Desktop\\enkrpsi3.txt");
 
         try {
-            encryptDecrypt("12345678", Cipher.ENCRYPT_MODE, encrypted, decrypted);
+            encryptDecrypt("12345678", Cipher.ENCRYPT_MODE, plain, decrypted);
+            encryptDecrypt("12345678", Cipher.ENCRYPT_MODE, plain2, decrypted2);
+            encryptDecrypt("12345678", Cipher.ENCRYPT_MODE, plain3, decrypted3);
             System.out.println("enkripsi selesai");
         } catch (InvalidKeyException | NoSuchAlgorithmException | InvalidKeySpecException | NoSuchPaddingException
                 | IOException e) {
