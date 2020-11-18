@@ -19,6 +19,7 @@ public class DESCBCMAC {
         cbcBlockCipherMac.init(keyParameter);
         cbcBlockCipherMac.update(input, 0, input.length);
         cbcBlockCipherMac.doFinal(output, 0);
+        
         return output;
     }
 

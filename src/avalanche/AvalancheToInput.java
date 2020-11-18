@@ -1,12 +1,19 @@
 package avalanche;
 
+import DES.Chiper;
 import cipher.DESCBCMAC;
 import stats.Histogram;
-
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class AvalancheToInput {
+
 
     private DESCBCMAC descbcmac;
     private Histogram histogram;
@@ -63,6 +70,10 @@ public class AvalancheToInput {
     // Calculate Hamming distance for a case study
     public int getHammingDistance(byte[] a, byte[] b) {
         int res = 0;
+         System.out.println("");
+        System.out.println(a.length);
+        System.out.println(b.length);
+        System.out.println("");
         byte[] xnor = new byte[a.length];
         for (int i = 0; i < xnor.length; i++) {
             xnor[i] = (byte) ((a[i] & b[i]) | (~a[i] & ~b[i]));
@@ -77,7 +88,7 @@ public class AvalancheToInput {
         return res;
     }
 
-    // Metodos para mostrar por pantalla los valores del histograma
+    // Methods for displaying histogram values ​​on the screen
     public void printHistogram() {
         histogram.print();
     }

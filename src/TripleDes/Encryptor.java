@@ -18,7 +18,7 @@ public class Encryptor {
     public static void main(String[] args) {
         FileOutputStream fos = null;
         File file = new File(inputFilePath);
-        String keyString = "012345678";
+        String keyString = "123456781122334412345678";
 
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -30,7 +30,8 @@ public class Encryptor {
             SecretKey secretKey = getKey(keyString);
             Cipher cipher = Cipher.getInstance("DESede/ECB/PKCS5Padding");
             cipher.init(Cipher.ENCRYPT_MODE, secretKey, SecureRandom.getInstance("SHA1PRNG"));
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(new CipherOutputStream(new FileOutputStream("C:\\Users\\SONY\\Desktop\\enkripsie3des.txt"), cipher));
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(new CipherOutputStream(
+                    new FileOutputStream("C:\\Users\\SONY\\Desktop\\enkripsie3des.txt"), cipher));
             objectOutputStream.writeObject(fileByteArray);
             objectOutputStream.close();
         } catch (Exception e) {
